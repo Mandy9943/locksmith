@@ -436,15 +436,16 @@ export default function LandingPage() {
                 <Phone className="h-5 w-5" />
                 <span className="font-bold">Call +44 7551 458842</span>
               </Button>
-              <Link href="https://wa.me/447551458842">
-                <Button
-                  variant="outline"
-                  className="border-white text-white hover:bg-blue-700 flex items-center gap-2 px-6 py-6 text-lg w-full md:w-auto"
-                >
+              <Button
+                variant="outline"
+                className="border-white bg-blue-500 hover:text-white text-white hover:bg-blue-700 flex items-center gap-2 px-6 py-6 text-lg w-full md:w-auto"
+                asChild
+              >
+                <Link href="https://wa.me/447551458842">
                   <MessageCircle className="h-5 w-5" />
                   <span className="font-bold">WhatsApp Now</span>
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
