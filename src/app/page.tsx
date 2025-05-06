@@ -577,8 +577,16 @@ export default function LandingPage() {
 
           <div className="text-center mt-10">
             <p className="text-slate-600 mb-6">
-              (Over 30 more five-star reviews available on Google – search
-              &quot;Lock Savers Locksmiths Birmingham&quot; to verify.)
+              (Over 30 more five-star reviews available on Google –{" "}
+              <a
+                href=" https://www.google.com/search?q=Lock+Savers+Locksmiths+Birmingham&rlz=1C5CHFA_enAE1142AE1142&oq=Lock+Savers+Locksmiths+Birmingham&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBBzI3MGowajeoAgCwAgA&sourceid=chrome&ie=UTF-8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:text-blue-600 underline"
+              >
+                click here to verify
+              </a>{" "}
+              )
             </p>
             <div className="inline-flex items-center gap-2 bg-slate-100 px-4 py-2 rounded-full">
               <div className="flex">
