@@ -1,14 +1,14 @@
+import ImageSlideshow from "@/components/ImageSlideshow";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { AlertTriangle, MessageCircle, Phone } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import ImageSlideshow from "./ImageSlideshow";
 
 interface HeroProps {
   countdown: { minutes: number; seconds: number };
-  fadeIn: any;
+  fadeIn: Variants;
   Star: React.ElementType;
 }
 

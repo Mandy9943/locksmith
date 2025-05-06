@@ -1,11 +1,11 @@
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Clock } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 interface ImageSlideshowProps {
   countdown: { minutes: number; seconds: number };
-  fadeIn: any;
+  fadeIn: Variants;
   Star: React.ElementType;
 }
 
