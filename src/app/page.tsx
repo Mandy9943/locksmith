@@ -279,9 +279,14 @@ export default function LandingPage() {
                   Don&apos;t wait - our emergency locksmith service is just a
                   call away.
                 </p>
-                <Button className="bg-white text-blue-600 hover:bg-slate-100 w-full">
-                  <Phone className="h-4 w-4 mr-2" />
-                  Call +44 7551 458842
+                <Button
+                  className="bg-white text-blue-600 hover:bg-slate-100 w-full"
+                  asChild
+                >
+                  <a href="tel:+447551458842">
+                    <Phone className="h-4 w-4 mr-2" />
+                    Call +44 7551 458842
+                  </a>
                 </Button>
               </div>
             </motion.div>
@@ -432,9 +437,14 @@ export default function LandingPage() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-white text-blue-600 hover:bg-slate-100 flex items-center gap-2 px-6 py-6 text-lg">
-                <Phone className="h-5 w-5" />
-                <span className="font-bold">Call +44 7551 458842</span>
+              <Button
+                className="bg-white text-blue-600 hover:bg-slate-100 flex items-center gap-2 px-6 py-6 text-lg"
+                asChild
+              >
+                <a href="tel:+447551458842">
+                  <Phone className="h-5 w-5" />
+                  <span className="font-bold">Call +44 7551 458842</span>
+                </a>
               </Button>
               <Button
                 variant="outline"
@@ -902,11 +912,16 @@ export default function LandingPage() {
             <p className="text-lg text-slate-700 mb-6">
               Have another question?
             </p>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2 px-6 py-3 text-lg mx-auto">
-              <Phone className="h-5 w-5" />
-              <span className="font-bold">
-                Call +44 7551 458842 and ask directly
-              </span>
+            <Button
+              className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2 px-6 py-3 text-lg mx-auto w-fit"
+              asChild
+            >
+              <a href="tel:+447551458842">
+                <Phone className="h-5 w-5" />
+                <span className="font-bold">
+                  Call +44 7551 458842 and ask directly
+                </span>
+              </a>
             </Button>
           </div>
         </div>
@@ -936,12 +951,17 @@ export default function LandingPage() {
             </p>
 
             <div className="flex flex-col md:flex-row justify-center items-center gap-6">
-              <Button className="bg-white text-blue-600 hover:bg-slate-100 flex items-center gap-2 px-8 py-7 text-xl w-full md:w-auto group relative overflow-hidden">
-                <div className="absolute inset-0 w-0 bg-slate-200 transition-all duration-[400ms] ease-out group-hover:w-full"></div>
-                <Phone className="h-6 w-6 relative z-10" />
-                <span className="font-bold relative z-10">
-                  Call +44 7551 458842
-                </span>
+              <Button
+                className="bg-white text-blue-600 hover:bg-slate-100 flex items-center gap-2 px-8 py-7 text-xl w-full md:w-auto group relative overflow-hidden"
+                asChild
+              >
+                <a href="tel:+447551458842">
+                  <div className="absolute inset-0 w-0 bg-slate-200 transition-all duration-[400ms] ease-out group-hover:w-full"></div>
+                  <Phone className="h-6 w-6 relative z-10" />
+                  <span className="font-bold relative z-10">
+                    Call +44 7551 458842
+                  </span>
+                </a>
               </Button>
               <Link
                 href="https://wa.me/447551458842"

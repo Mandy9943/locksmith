@@ -42,12 +42,17 @@ const Hero: React.FC<HeroProps> = ({ countdown, fadeIn, Star }) => (
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2 px-6 py-6 text-lg group relative overflow-hidden">
-              <div className="absolute inset-0 w-0 bg-blue-800 transition-all duration-[400ms] ease-out group-hover:w-full"></div>
-              <Phone className="h-5 w-5 relative z-10" />
-              <span className="font-bold relative z-10">
-                Call +44 7551 458842
-              </span>
+            <Button
+              className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2 px-6 py-6 text-lg group relative overflow-hidden"
+              asChild
+            >
+              <a href="tel:+447551458842">
+                <div className="absolute inset-0 w-0 bg-blue-800 transition-all duration-[400ms] ease-out group-hover:w-full"></div>
+                <Phone className="h-5 w-5 relative z-10" />
+                <span className="font-bold relative z-10">
+                  Call +44 7551 458842
+                </span>
+              </a>
             </Button>
             <Link href="https://wa.me/447551458842">
               <Button
