@@ -1,4 +1,4 @@
-import { motion, Variants } from "framer-motion";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 import { Clock } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
@@ -37,14 +37,26 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
       variants={fadeIn}
       className="relative"
     >
-      <div className="relative rounded-xl overflow-hidden shadow-2xl border-8 border-white">
-        <Image
-          src={images[index]}
-          alt="Professional locksmith service in Birmingham"
-          width={800}
-          height={600}
-          className="w-full h-auto object-cover"
-        />
+      <div className="relative rounded-xl overflow-hidden shadow-2xl border-8 border-white aspect-[4/3] max-h-[600px]">
+        <AnimatePresence>
+          <motion.div
+            key={index}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 3 }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={images[index]}
+              alt="Professional locksmith service in Birmingham"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority={index === 0}
+            />
+          </motion.div>
+        </AnimatePresence>
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/90 to-transparent p-6">
           <div className="flex items-center gap-3 text-white">
             <div className="flex">

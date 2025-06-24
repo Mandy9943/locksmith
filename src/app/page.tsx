@@ -1,6 +1,8 @@
 "use client";
 
+import AnimatedList from "@/components/AnimatedList";
 import Hero from "@/components/Hero";
+import TiltedCard from "@/components/TiltedCard";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -71,6 +73,51 @@ export default function LandingPage() {
       },
     },
   };
+
+  const differentItems = [
+    {
+      icon: <Phone className="h-8 w-8" />,
+      title: "You Speak to Me, Not a Call-Centre",
+      description:
+        "From first ring to job done, you deal with the owner – no hand-offs, no miscommunication.",
+    },
+    {
+      icon: <MapPin className="h-8 w-8" />,
+      title: 'Local "Brummie" Know-How',
+      description:
+        "Based on Yardley Road, I know Birmingham traffic shortcuts and the quirks of its Victorian and modern locks alike.",
+    },
+    {
+      icon: <CreditCard className="h-8 w-8" />,
+      title: "Up-Front, Fair Pricing",
+      description:
+        "I quote before starting; no hidden weekend surcharges and never a call-out fee.",
+    },
+    {
+      icon: <Home className="h-8 w-8" />,
+      title: "Respect for Your Time & Property",
+      description:
+        "Clean work, shoe covers indoors, and I'll tidy any drilling dust before I leave.",
+    },
+    {
+      icon: <Shield className="h-8 w-8" />,
+      title: "Security-First Approach",
+      description:
+        "Only British-Standard, insurance-approved parts – your safety isn't negotiable.",
+    },
+  ].map((item, index) => (
+    <div key={index} className="grid md:grid-cols-6 gap-6 items-center">
+      <div className="md:col-span-1 flex justify-center">
+        <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mb-4 md:mb-0">
+          {item.icon}
+        </div>
+      </div>
+      <div className="md:col-span-5 text-center md:text-left">
+        <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
+        <p className="text-slate-700 text-lg">{item.description}</p>
+      </div>
+    </div>
+  ));
 
   return (
     <div className="min-h-screen bg-white">
@@ -294,8 +341,56 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Certification Section */}
       <section className="py-20 bg-slate-50">
+        <div className="container px-4 mx-auto max-w-7xl">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeIn}
+            className="text-center max-w-3xl mx-auto mb-16"
+          >
+            <Badge className="mb-4 bg-blue-100 text-blue-700 border-blue-200 px-3 py-1">
+              Certified & Qualified
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+              Proudly Certified for Your Peace of Mind
+            </h2>
+            <p className="text-lg text-slate-600">
+              I hold official certifications, ensuring my work meets the highest
+              industry standards. This certificate is from the UK Locksmiths
+              Association for the Advanced Mechanisms Course.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+            className="flex justify-center"
+          >
+            <TiltedCard
+              imageSrc="/images/image5.jpg"
+              altText="UK Locksmiths Association Certificate"
+              captionText="Advanced Mechanisms Course Certificate"
+              containerHeight="350px"
+              imageHeight="350px"
+              scaleOnHover={1.05}
+              rotateAmplitude={10}
+              showMobileWarning={false}
+              showTooltip={true}
+              displayOverlayContent={false}
+              // containerClassName="w-[350px] md:w-[500px]"
+              // imageClassName="w-[350px] md:w-[500px]"
+            />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 bg-white">
         <div className="container px-4 mx-auto max-w-7xl">
           <motion.div
             initial="hidden"
@@ -436,7 +531,7 @@ export default function LandingPage() {
                 Professional help is just one call away - available 24/7.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col md:flex-row gap-4">
               <Button
                 className="bg-white text-blue-600 hover:bg-slate-100 flex items-center gap-2 px-6 py-6 text-lg"
                 asChild
@@ -637,113 +732,15 @@ export default function LandingPage() {
             </p>
           </motion.div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="space-y-6"
-          >
-            <motion.div
-              variants={fadeIn}
-              className="bg-white p-8 rounded-xl shadow-md border border-slate-100 grid md:grid-cols-5 gap-6 hover:shadow-lg transition-shadow"
-            >
-              <div className="md:col-span-1">
-                <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mb-4">
-                  <Phone className="h-8 w-8" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900">
-                  You Speak to Me, Not a Call-Centre
-                </h3>
-              </div>
-              <div className="md:col-span-4 flex items-center">
-                <p className="text-slate-700 text-lg">
-                  From first ring to job done, you deal with the owner – no
-                  hand-offs, no miscommunication.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              variants={fadeIn}
-              className="bg-white p-8 rounded-xl shadow-md border border-slate-100 grid md:grid-cols-5 gap-6 hover:shadow-lg transition-shadow"
-            >
-              <div className="md:col-span-1">
-                <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mb-4">
-                  <MapPin className="h-8 w-8" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900">
-                  Local &quot;Brummie&quot; Know-How
-                </h3>
-              </div>
-              <div className="md:col-span-4 flex items-center">
-                <p className="text-slate-700 text-lg">
-                  Based on Yardley Road, I know Birmingham traffic shortcuts and
-                  the quirks of its Victorian and modern locks alike.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              variants={fadeIn}
-              className="bg-white p-8 rounded-xl shadow-md border border-slate-100 grid md:grid-cols-5 gap-6 hover:shadow-lg transition-shadow"
-            >
-              <div className="md:col-span-1">
-                <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mb-4">
-                  <CreditCard className="h-8 w-8" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900">
-                  Up-Front, Fair Pricing
-                </h3>
-              </div>
-              <div className="md:col-span-4 flex items-center">
-                <p className="text-slate-700 text-lg">
-                  I quote before starting; no hidden weekend surcharges and
-                  never a call-out fee.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              variants={fadeIn}
-              className="bg-white p-8 rounded-xl shadow-md border border-slate-100 grid md:grid-cols-5 gap-6 hover:shadow-lg transition-shadow"
-            >
-              <div className="md:col-span-1">
-                <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mb-4">
-                  <Home className="h-8 w-8" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900">
-                  Respect for Your Time & Property
-                </h3>
-              </div>
-              <div className="md:col-span-4 flex items-center">
-                <p className="text-slate-700 text-lg">
-                  Clean work, shoe covers indoors, and I&apos;ll tidy any
-                  drilling dust before I leave.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              variants={fadeIn}
-              className="bg-white p-8 rounded-xl shadow-md border border-slate-100 grid md:grid-cols-5 gap-6 hover:shadow-lg transition-shadow"
-            >
-              <div className="md:col-span-1">
-                <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mb-4">
-                  <Shield className="h-8 w-8" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900">
-                  Security-First Approach
-                </h3>
-              </div>
-              <div className="md:col-span-4 flex items-center">
-                <p className="text-slate-700 text-lg">
-                  Only British-Standard, insurance-approved parts – your safety
-                  isn&apos;t negotiable.
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
+          <div className="max-w-4xl mx-auto">
+            <AnimatedList
+              items={differentItems}
+              displayScrollbar={false}
+              showGradients={false}
+              className="!overflow-visible"
+              itemClassName="border border-slate-100 hover:shadow-lg transition-shadow !p-8 rounded-xl"
+            />
+          </div>
         </div>
       </section>
 
@@ -913,7 +910,7 @@ export default function LandingPage() {
               Have another question?
             </p>
             <Button
-              className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2 px-6 py-3 text-lg mx-auto w-fit"
+              className="text-xs md:text-base bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2 px-6 py-3  mx-auto w-fit"
               asChild
             >
               <a href="tel:+447551458842">
