@@ -14,16 +14,13 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ countdown, fadeIn, Star }) => (
   <section className="pt-24 md:pt-32 pb-12 md:pb-20 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
-    <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
-      <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/lock-pattern-light.jpg')] bg-repeat opacity-20"></div>
-    </div>
     <div className="container px-4 mx-auto max-w-7xl">
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={fadeIn}
-          className="text-left"
+          className="text-center md:text-left"
         >
           <Badge className="mb-4 bg-blue-100 text-blue-700 border-blue-200 px-3 py-1 text-sm">
             <AlertTriangle className="h-3 w-3 mr-1" />

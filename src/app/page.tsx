@@ -963,7 +963,7 @@ export default function LandingPage() {
               <Button
                 asChild
                 variant="outline"
-                className="border border-white text-white hover:bg-white/10 flex items-center gap-2 px-8 py-7 text-xl w-full md:w-auto rounded-md"
+                className="border border-white bg-blue-600 text-white hover:bg-white/10 flex items-center gap-2 px-8 py-7 text-xl w-full md:w-auto rounded-md"
               >
                 <Link
                   href="https://wa.me/447551458842"
