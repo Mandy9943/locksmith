@@ -169,7 +169,7 @@ export default function LandingPage() {
             </Link>
           </div>
 
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white md:hidden">
+          <Button className="bg-blue-600 hover:bg-blue-700 text-white md:hidden px-4 py-2">
             <Phone className="h-4 w-4 mr-2" />
             Call Now
           </Button>
@@ -960,13 +960,19 @@ export default function LandingPage() {
                   </span>
                 </a>
               </Button>
-              <Link
-                href="https://wa.me/447551458842"
-                className="inline-flex items-center justify-center border border-white text-white hover:bg-blue-700 gap-2 px-8 py-7 text-xl w-full md:w-auto rounded-md"
+              <Button
+                asChild
+                variant="outline"
+                className="border border-white text-white hover:bg-white/10 flex items-center gap-2 px-8 py-7 text-xl w-full md:w-auto rounded-md"
               >
-                <MessageCircle className="h-6 w-6" />
-                <span className="font-bold">Start WhatsApp Chat</span>
-              </Link>
+                <Link
+                  href="https://wa.me/447551458842"
+                  className="inline-flex items-center justify-center w-full"
+                >
+                  <MessageCircle className="h-6 w-6 mr-2" />
+                  <span className="font-bold">Start WhatsApp Chat</span>
+                </Link>
+              </Button>
             </div>
 
             <div className="mt-12 p-6 bg-white/10 rounded-xl backdrop-blur-sm border border-white/20 max-w-2xl mx-auto">
@@ -1152,8 +1158,11 @@ export default function LandingPage() {
       {/* Floating Call Button (Mobile Only) */}
       <div className="fixed bottom-6 right-6 md:hidden z-50">
         <Link href="tel:+447551458842">
-          <Button className="w-16 h-16 rounded-full bg-blue-600 hover:bg-blue-700 flex items-center justify-center shadow-lg">
-            <Phone className="h-6 w-6 text-white" />
+          <Button
+            size="lg"
+            className="w-16 h-16 rounded-full bg-blue-600 hover:bg-blue-700 flex items-center justify-center shadow-lg"
+          >
+            <Phone className="h-7 w-7 text-white" />
           </Button>
         </Link>
       </div>

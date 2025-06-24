@@ -2,7 +2,7 @@ import ImageSlideshow from "@/components/ImageSlideshow";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { motion, Variants } from "framer-motion";
-import { AlertTriangle, MessageCircle, Phone } from "lucide-react";
+import { AlertTriangle, Clock, MessageCircle, Phone } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -13,7 +13,7 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ countdown, fadeIn, Star }) => (
-  <section className="pt-32 pb-20 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+  <section className="pt-24 md:pt-32 pb-12 md:pb-20 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
     <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
       <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/lock-pattern-light.jpg')] bg-repeat opacity-20"></div>
     </div>
@@ -36,14 +36,14 @@ const Hero: React.FC<HeroProps> = ({ countdown, fadeIn, Star }) => (
             Your Local 24/7 Locksmith Is Already Heading Over –{" "}
             <span className="font-semibold">Personally</span>
           </p>
-          <div className="mb-8 p-4 bg-blue-50 border border-blue-100 rounded-lg inline-block">
+          <div className="mb-8 p-4 bg-white border border-slate-200 shadow-sm rounded-lg inline-block">
             <p className="text-lg text-slate-700 font-medium">
               One Trusted Professional • Round-the-Clock Service • Proudly Local
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
             <Button
-              className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2 px-6 py-6 text-lg group relative overflow-hidden"
+              className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2 px-6 py-6 text-lg group relative overflow-hidden w-full sm:w-auto"
               asChild
             >
               <a href="tel:+447551458842">
@@ -54,18 +54,19 @@ const Hero: React.FC<HeroProps> = ({ countdown, fadeIn, Star }) => (
                 </span>
               </a>
             </Button>
-            <Link href="https://wa.me/447551458842">
-              <Button
-                variant="outline"
-                className="border-blue-600 text-blue-600 hover:bg-blue-50 flex items-center gap-2 px-6 py-6 text-lg"
-              >
+            <Button
+              variant="outline"
+              className="border-blue-600 text-blue-600 hover:bg-blue-50 flex items-center gap-2 px-6 py-6 text-lg w-full sm:w-auto"
+              asChild
+            >
+              <Link href="https://wa.me/447551458842">
                 <MessageCircle className="h-5 w-5" />
                 <span className="font-bold">Tap to WhatsApp</span>
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </div>
-          <div className="mt-2 bg-green-50 text-green-700 px-4 py-2 rounded-full inline-flex items-center font-medium">
-            <span className="mr-2 text-xl">🕒</span> I&apos;m 10 Minutes Away
+          <div className="mt-2 bg-green-100 text-green-800 border border-green-200 px-4 py-3 rounded-full inline-flex items-center font-medium shadow-sm">
+            <Clock className="h-5 w-5 mr-2" /> I&apos;m 10 Minutes Away
           </div>
         </motion.div>
         <ImageSlideshow countdown={countdown} fadeIn={fadeIn} Star={Star} />

@@ -71,24 +71,30 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
           </div>
         </div>
       </div>
-      <div className="absolute -bottom-6 -right-6 bg-white rounded-lg shadow-xl p-4 border border-slate-100 max-w-xs">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
-            <Clock className="h-6 w-6" />
+      <div className="absolute -bottom-6 -right-2 sm:-right-6 bg-white rounded-lg shadow-xl p-2 sm:p-4 border border-slate-100 w-[200px]  sm:w-auto sm:max-w-xs">
+        <div className="flex items-center gap-2 sm:gap-3 mb-2">
+          <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 flex-shrink-0">
+            <Clock className="h-4 w-4 sm:h-6 sm:w-6" />
           </div>
           <div>
-            <p className="text-sm text-slate-600">Average response time</p>
-            <p className="text-lg font-bold text-slate-900">20-30 minutes</p>
+            <p className="text-xs sm:text-sm text-slate-600">
+              Average response time
+            </p>
+            <p className="text-xs sm:text-base font-bold text-slate-900">
+              20-30 minutes
+            </p>
           </div>
         </div>
         <div className="bg-blue-50 rounded p-2 text-center">
-          <p className="text-sm text-blue-700">Next available locksmith in:</p>
-          <div className="flex justify-center gap-2 mt-1">
-            <div className="bg-blue-600 text-white rounded px-2 py-1 text-sm font-mono">
+          <p className="text-[10px] sm:text-sm text-blue-700">
+            Next available locksmith in:
+          </p>
+          <div className="flex justify-center gap-1 mt-1">
+            <div className="bg-blue-600 text-white rounded px-2 py-1 text-xs sm:text-sm font-mono">
               {String(countdown.minutes).padStart(2, "0")}
             </div>
             <span className="text-blue-700 font-bold">:</span>
-            <div className="bg-blue-600 text-white rounded px-2 py-1 text-sm font-mono">
+            <div className="bg-blue-600 text-white rounded px-2 py-1 text-xs sm:text-sm font-mono">
               {String(countdown.seconds).padStart(2, "0")}
             </div>
           </div>
