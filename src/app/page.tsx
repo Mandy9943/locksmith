@@ -132,8 +132,8 @@ export default function LandingPage() {
             <Image
               src="/logo.webp"
               alt="Lock Savers Logo"
-              width={40}
-              height={40}
+              width={80}
+              height={80}
             />
 
             <div>
@@ -1003,8 +1003,8 @@ export default function LandingPage() {
                 <Image
                   src="/logo.webp"
                   alt="Lock Savers Logo"
-                  width={40}
-                  height={40}
+                  width={120}
+                  height={120}
                 />
                 <div>
                   <h2 className="font-bold text-white text-lg">Lock Savers</h2>
